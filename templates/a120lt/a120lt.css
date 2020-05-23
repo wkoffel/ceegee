@@ -11,20 +11,20 @@ span {
     font-size: 3em;
     position: fixed;
     left: 520px;
-    bottom: 240px;
+    top: 850px;
 }
 
 .lower-third .subtitle {
     font-size: 1.5em;
     position: fixed;
     left: 520px;
-    bottom: 172px;
+    top: 942px;
 }
 
 .lower-third .logo {
     position: fixed;
     left: 190px;
-    bottom: 180px;
+    top: 860px;
 }
 
 .logo img {

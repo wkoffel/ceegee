@@ -10,7 +10,7 @@ var quitRequest = false;
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    // fullscreen: true,
+    fullscreen: true,
     width: 1920,
     height: 1080,
     webPreferences: {
@@ -21,7 +21,7 @@ function createWindow () {
   loadTemplate("default");
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 }
 
 function loadTemplate(template = "default") {
@@ -44,6 +44,7 @@ function runInquiryLoop() {
         choices: [
           'playground',
           'default',
+          'a120lt',
           new inquirer.Separator(),
           'Quit CeeGee', // TODO: this probably should be a different kind of inquiry choice
         ]
