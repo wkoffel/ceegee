@@ -1,0 +1,32 @@
+body {
+    background: #00b140;
+    background-image: url("lower-third-turqoise.png");
+    background-repeat: no-repeat;
+}
+span {
+    color: #b10040;
+}
+
+.lower-third .title {
+    font-size: 3em;
+    position: fixed;
+    left: 520px;
+    bottom: 240px;
+}
+
+.lower-third .subtitle {
+    font-size: 1.5em;
+    position: fixed;
+    left: 520px;
+    bottom: 172px;
+}
+
+.lower-third .logo {
+    position: fixed;
+    left: 190px;
+    bottom: 180px;
+}
+
+.logo img {
+    height: 100px;
+}

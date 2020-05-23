@@ -1,5 +1,7 @@
 body {
     background: #00b140;
+    background-image: url("lower-third-turqoise.png");
+    background-repeat: no-repeat;
 }
 span {
     color: #b10040;
