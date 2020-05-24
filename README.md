@@ -22,6 +22,13 @@ sudo apt update
 sudo apt full-upgrade
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 nvm install 14
+
+# These extra apt commands queue up the correct yarn package
+# otherwise you get an unrelated package from cmdtest on Debian
+sudo apt remove cmdtest
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
 sudo apt install yarn
 ```
 
@@ -79,7 +86,7 @@ yarn start
 Some potential directions for future development:
 
 * Expose a web-based interface for selecting templates (instead of just a CLI-style interface)
-
+* Integrate support for paid accounts at http://singular.live/, using their hosted URL pattern, loading transitions into the Electron app.  Early tests suggests this works fairly well.
 
 ## License
 
