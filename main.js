@@ -9,14 +9,19 @@ var quitRequest = false;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    fullscreen: true,
+  var windowOptions = {
     width: 1920,
     height: 1080,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
-  })
+  }
+  // for debugging on large-screen mac, keep window at the desired output resolution
+  if(process.platform !== 'darwin') {
+    windowOptions["fullscreen"] = true;
+  }
+
+  mainWindow = new BrowserWindow(windowOptions);
 
   loadTemplate("default");
 
@@ -27,6 +32,7 @@ function createWindow () {
 function loadTemplate(template = "default") {
   // and load the index.html of the app.
   mainWindow.loadFile(`templates/${template}/index.html`)
+  // mainWindow.loadURL('https://app.singular.live/output/0fIJdY3p2LynJDcgNkMhWO/Output?aspect=16:9')
 }
 
 function runInquiryLoop() {
@@ -45,6 +51,9 @@ function runInquiryLoop() {
           'playground',
           'default',
           'a120lt',
+          'a120-mark',
+          'clear',
+          'mustache',
           new inquirer.Separator(),
           'Quit CeeGee', // TODO: this probably should be a different kind of inquiry choice
         ]

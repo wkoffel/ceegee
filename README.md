@@ -18,10 +18,11 @@ CeeGee was built with a primary use-case in mind, although adjacent creative use
 
 On a Raspberry Pi, first make sure it's fully up to date:
 ```
-rpi$ sudo apt update
-rpi$ sudo apt full-upgrade
-rpi$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-rpi$ nvm install 14
+sudo apt update
+sudo apt full-upgrade
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install 14
+sudo apt install yarn
 ```
 
 Some recommended extras:
@@ -31,16 +32,16 @@ Some recommended extras:
 Then install CeeGee:
 
 ```
-rpi$ git clone https://github.com/wkoffel/ceegee
-rpi$ cd ceegee
-rpi$  
+git clone https://github.com/wkoffel/ceegee
+cd ceegee
+yarn install  
 ```
 
 Finally, connect the Pi HDMI output to an HDMI switcher, login via SSH and run:
 
 ```
 rpi$ cd ceegee
-rpi$ DISPLAY=:0.0 npm start
+rpi$ DISPLAY=:0.0 yarn start
 ```
 
 You may see MESA-LOADER warnings, a [known bug](https://github.com/RPi-Distro/repo/issues/89) in the RPi OpenGL distro.  They are annoying but harmless.
@@ -54,15 +55,30 @@ Templates can be any web-page content. Uses include:
 
 New templates are installed under `ceegee/templates/` directory.
 
-## Contributing
+## Contributing Templates
 
-For any feedback or contributions, please use GitHub Issues and Pull Requests.
+For any feedback, discussion or contributions, please use GitHub Issues and Pull Requests.
 
 **Please make templates** One of the best ways to contribute is to build an HTML template designed for CeeGee.  I am not a designer, so great graphical experiences are welcome additions!
 
+
+## Development
+
+I typically developer and test on macOS, deploy to Raspberry Pi.  The following should mostly get a dev environment running on macOS:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install 14
+brew install yarn
+git clone https://github.com/wkoffel/ceegee
+cd ceegee
+yarn install
+yarn start
+```
+
 Some potential directions for future development:
 
-1) Expose a web-based interface for selecting templates (instead of just a CLI-style interface)
+* Expose a web-based interface for selecting templates (instead of just a CLI-style interface)
 
 
 ## License

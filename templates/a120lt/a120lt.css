@@ -3,9 +3,6 @@ body {
     background-image: url("lower-third-turqoise.png");
     background-repeat: no-repeat;
 }
-span {
-    color: #b10040;
-}
 
 .lower-third .title {
     font-size: 3em;
