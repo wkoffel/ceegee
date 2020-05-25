@@ -1,0 +1,2 @@
+// class SingularTemplate extends CeeGeeTemplate {
+// }
