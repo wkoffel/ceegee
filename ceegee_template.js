@@ -15,7 +15,7 @@ class CeegeeTemplate {
 // }
 
 // CeegeeTemplate.prototype.inquiryPrompt = function() {
-//     console.log("return inquiry prompts for this " + JSON.stringify(getVars()));
+// console.log("return inquiry prompts for this " + JSON.stringify(getVars()));
 // }
 
 module.exports = CeegeeTemplate;

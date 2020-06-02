@@ -1,9 +1,6 @@
 body {
     background: #00b140;
 }
-span {
-    color: #b10040;
-}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
@@ -23,7 +20,7 @@ main {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: linear-gradient(25deg, #091521, #7a8699);
+  // background: linear-gradient(25deg, #091521, #7a8699);
 }
 
 .animation {
