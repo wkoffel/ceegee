@@ -25,10 +25,15 @@ function createWindow() {
 
   mainWindow = new BrowserWindow(windowOptions);
 
+  mainWindow.webContents.on('dom-ready', (event)=> {
+    const css = '* { cursor: none !important; }';
+    mainWindow.webContents.insertCSS(css);
+  });
+
   loadTemplate('default');
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 function loadTemplate(template = 'default') {
