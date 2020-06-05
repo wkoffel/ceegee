@@ -18,7 +18,8 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
     },
   };
-  // for debugging on large-screen mac, keep window at the desired output resolution
+  // for debugging on large-screen mac,
+  // keep window at the desired output resolution
   if (process.platform !== 'darwin') {
     windowOptions.fullscreen = true;
   }
@@ -33,7 +34,9 @@ function createWindow() {
   loadTemplate('default');
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // TODO: make this configuration or env dependent,
+  //       so I stop forgetting to disable it
+  // mainWindow.webContents.openDevTools()
 }
 
 function loadTemplate(template = 'default') {
@@ -60,7 +63,7 @@ function runInquiryLoop() {
           'clear',
           'mustache',
           new inquirer.Separator(),
-          'Quit CeeGee', // TODO: this probably should be a different kind of inquiry choice
+          'Quit CeeGee', // TODO: use different kind of inquiry choice?
         ],
       },
     ]).then((answers) => {
